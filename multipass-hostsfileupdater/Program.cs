@@ -13,7 +13,7 @@ internal class Program
     private static void Main(string[] args)
     {
 
-        if(IsWindows())
+        if(!IsWindows())
         {
             Console.WriteLine("Program runs on Windows only.");
             return;
@@ -109,7 +109,7 @@ internal class Program
 
     public static bool IsWindows()
     {
-        return Environment.OSVersion.Platform == PlatformID.Win32NT && Environment.OSVersion.Platform == PlatformID.Win32Windows;
+        return Environment.OSVersion.Platform == PlatformID.Win32NT || Environment.OSVersion.Platform == PlatformID.Win32Windows;
     }
 
     public static bool IsAdministrator()
